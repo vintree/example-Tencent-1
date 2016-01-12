@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>5 星标杆</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="./css/index.css" />
+        <script type="text/javascript" >
+            new function() {
+                var _self = this;
+                _self.width = 650;   //psd宽度, default, cdc标准
+                _self.fontSize = 100;//字体大小
+                _self.widthProportion = function() {
+                    var p = ((document.body && document.documentElement.clientWidth || document.getElementsByTagName("html")[0].offsetWidth )  / _self.width );
+                    var px1 = (p * _self.fontSize).toFixed(2);
+                    px1 = px1>100?100:px1;
+                    px1 = px1<0.08?0.08:px1;
+                    return px1;
+                };
+                _self.changePage = function() {
+                    document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+_self.widthProportion()+"px; !important");
+                };
+                _self.changePage();
+                window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function(){ setTimeout(function() {_self.changePage();}, 300); }, false); //手机改变状态时也执行该方法
+            };
+        </script>
+    </head>
+    <body class="index-body">
+        <ul class="index-list">
+            <li class="index-unit">
+                <div class="index-unit-head">
+                    <div class="index-unit-head-img">
+                        <img src="./img/user-head.png"></img>
+                    </div>
+                    <div class="index-unit-head-name">ladylexy(陈三十)</div>
+                </div>
+                <div class="index-unit-body">
+                    <div class="index-unit-body-describe" data-full="对工作充满热情，关注细节，追求完美，表现出色！尤其是在跨部门的项目中更是表现出良好的团队合作能力。希望在未来工作中可以看到你更多的创新和闪光点。">
+                        对工作充满热情，关注细节，追求完美，表现出色！尤其是在跨部门的项目中更是表现出良好的团队合作能力。希望在未来工作中……
+                    </div>
+                    <div class="index-unit-body-btn">更多评语</div>
+                </div>
+            </li>
+
+            <li class="index-unit">
+                <div class="index-unit-head">
+                    <div class="index-unit-head-img">
+                        <img src="./img/user-head1.png"></img>
+                    </div>
+                    <div class="index-unit-head-name">csswizardry(魏雪)</div>
+                </div>
+                <div class="index-unit-body">
+                    <div class="index-unit-body-describe" data-full="对工作充满热情，关注细节，追求完美，表现出色！尤其是在跨部门的项目中更是表现出良好的团队合作能力。希望在未来工作中可以看到你更多的创新和闪光点。">
+                        对工作充满热情，关注细节，追求完美，表现出色！尤其是在跨部门的项目中更是表现出良好的团队合作能力。希望在未来工作中……
+                    </div>
+                    <div class="index-unit-body-btn">更多评语</div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="pop-msg dnone">
+            <div class="pop-msg-container">
+                <div class="pop-msg-head"><img class="pop-msg-img" src="" /></div>
+                <div class="pop-msg-name"></div>
+                <div class="pop-msg-describe"></div>
+                <div class="pop-msg-close"></div>
+            </div>
+        </div>
+    </body>
+</html>
+<script type="text/javascript" src="./js/index.js"></script>
